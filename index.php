@@ -18,16 +18,20 @@
             non mi resterebbe altro che
             un lunghissimo minuto di violenza...
             E allora ti saluto, bella stronza';
+        $badword = $_GET['badword'];
+        $text = str_ireplace($badword, "***", $text);
         $length = strlen($text);
     ?>
 
     <h1><?= $title; ?></h1>
-    <p><?= $text; ?></p>
+    <p>
+        <?= $text; ?>
+    </p>
     <p>Lunghezza testo: <?= $length; ?></p>
     <form method="GET" action="">
         <label for="badword">Inserisci la parola da censurare:</label>
-        <input type="text" id="badword" name="">
-    </form>
-    
+        <input type="text" id="badword" name="badword">
+        <button>INVIO</button>
+    </form> 
 </body>
 </html>
